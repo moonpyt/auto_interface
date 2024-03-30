@@ -1,0 +1,18 @@
+﻿test_id|interface|title|conf|pre-update table|pre-query mongo|pre-update mongo|data|expected|check_mongo|check_mongo_expected
+1|QueryFxRate|查询成功||||||{"code":"S0000","message":"Success."}||
+2|QueryFxRate|反向汇率中间汇率1|{"participantID":"sop_autotest_online_sgd01"}||||{"participantID":"rop_autotest_online_sgd01"}|{"code":"S0000","message":"Success."}||
+3|QueryFxRate|中间汇率2|{"participantID":"sop_autotest_online_GBP01"}||||{"participantID":"rop_autotest_online_NZD02"}|{"code":"S0000","message":"Success."}||
+4|QueryFxRate|反向汇率中间汇率3|{"participantID":"sop_autotest_online_VND01"}||||{"participantID":"rop_autotest_online_NZD01"}|{"code":"S0000","message":"Success."}||
+5|QueryFxRate|反向汇率中间汇率4|{"participantID":"sop_autotest_online_ZAR01"}||||{"participantID":"rop_autotest_online_DKK01"}|{"code":"S0000","message":"Success."}||
+6|QueryFxRate|send->sop汇率查找不存在|||||{"sendCurrency": "RUB"}|{"code":"B0034","message":"SOP status error."}||
+7|QueryFxRate|rop->rev汇率查找不存在|||||{"receiveCurrency":"CHF"}|{"code":"B0035","message":"ROP status error."}||
+8|QueryFxRate|sop->rop汇率查找不存在|{"participantID" : "sop_autotest_online_sek01"}||||{"participantID":"rop_autotest_online_sek01"}|{"code":"B0034","message":"SOP status error."}||
+9|QueryFxRate||||||{"participantID":None}|{"code":"S0000","message":"Success."}||
+10|QueryFxRate|查询成功|||||{"sendCurrency":"JPY"}|{"code":"S0000","message":"Success."}||
+11|QueryFxRate|查询成功|{"participantID":"sop_autotest_online_jpyjpy01"}||||{"sendCurrency": "JPY","participantID":"rop_autotest_online_jpyjpy01"}|{"code":"S0000","message":"Success."}||
+12|QueryFxRate|查询成功|||||{"receiveCurrency":"CAD"}|{"code":"S0000","message":"Success."}||
+13|QueryFxRate|查询成功|{"participantID":"sop_autotest_online_jpyjpy01"}||||{"sendCurrency": "JPY","receiveCurrency": "JPY","participantID":"rop_autotest_online_jpyjpy01"}|{"code":"S0000","message":"Success."}||
+14|QueryFxRate|查询成功|||||{"sendCurrency": "JPY","receiveCurrency": "JPY"}|{"code":"S0000","message":"Success."}||
+30|QueryFxRate||||||{"receiveCurrency":None}|{"code":"V0001","message":"Field {receiveCurrency} absent or empty."}||
+31|QueryFxRate||||||{"sendCurrency":None}|{"code":"V0001","message":"Field {sendCurrency} absent or empty."}||
+32|QueryFxRate||||||{"sendCurrency":"AAA"}|{"code":"V0001","message":"Field {sendCurrency} absent or empty."}||

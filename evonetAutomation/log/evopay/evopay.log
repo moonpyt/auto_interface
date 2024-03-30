@@ -1,0 +1,2 @@
+my_log.info("用例：{}--执行未通过".format(cases["title"]))
+'2020-06-10 15:42:42,670 - [test_paut.py-->line:82] - INFO: 用例：预下单成功-WXP-09--执行未通过'

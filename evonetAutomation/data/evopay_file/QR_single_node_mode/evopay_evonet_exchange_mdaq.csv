@@ -1,0 +1,4 @@
+test_id|interface|title|conf|url|pre-update database|pre-update table|pre-query mongo|pre-update mongo|wopParticipantID|wopSignkey|mopParticipantID|mopSignkey|data|expected|check_mongo|check_mongo_expected|update database|update_mongo|test_scenario
+1-1|MPM QR Verification|MPM QR Verification-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01","qrPayload":"https://bccardnacfusd.com"}|{"code": "S0000", "message": "Success."}|||||all
+1-2|MPM Payment Authentication|MPM PaymentAuthentication-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+1-3|Payment Notification|Payment Notification-通知成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all

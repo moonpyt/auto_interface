@@ -1,0 +1,58 @@
+test_id|interface|title|conf|url|pre-update database|pre-update table|pre-query mongo|pre-update mongo|wopParticipantID|wopSignkey|mopParticipantID|mopSignkey|data|expected|check_mongo|check_mongo_expected|update database|update_mongo|test_scenario
+1-1|MPM QR Verification|MPM QR Verification-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01","qrPayload":"https://bccardnacfusd.com"}|{"code": "S0000", "message": "Success."}|||||all
+1-2|MPM Payment Authentication|MPM PaymentAuthentication-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+1-3|Payment Notification|Payment Notification-通知成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+2-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+2-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+3-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+3-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+3-3|Refund|Refund-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+4-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+4-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+4-3|Cancellation|Cancellation-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code":"S0000","message":"Success."}|||||all
+5-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+5-2|CPM Payment|CPM Payment-交易处理中|||||||MDAQ_WOP_01||bccardnacfusd||{"transAmount": {"currency": "USD", "value": "1.11"}}|{"code": "S0006", "message": "Success, require further processing."}|||||all
+5-3|Payment Inquiry|Payment Inquiry处理中-查询成功||/v0/payment/mop/paymentinquiry?evonetOrderNumber=#evonetOrderNumber#|||||MDAQ_WOP_01||bccardnacfusd||{"evonetOrderNumber": "#evonetOrderNumber#"}|{"code": "S0000", "message": "Success."}|||||all
+6-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01", "userData": {"wopUserReference": "#autotest_data#", "wopToken": "#autotest_data#", "evonetUserReference": "#autotest_data#"}}|{"code": "S0000", "message": "Success."}|||||all
+6-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"mopToken": {"value": "#mopToken#"}, "mopOrderNumber": "#mopOrderNumber#", "mopTransTime": "#mopTransTime#", "transAmount": {"currency": "JPY", "value": "23"}, "storeInfo": {"id": "auto storeId", "localName": "auto localName", "mcc": "7011"}}|{"code": "S0000", "message": "Success."}|||||all
+6-3|Refund|Refund-Refund退款中|||||||MDAQ_WOP_01||bccardnacfusd||{"originalEvonetOrderNumber": "#originalEvonetOrderNumber#", "mopOrderNumber": "#mopOrderNumber#", "mopTransTime": "#mopTransTime#", "transAmount": {"currency": "JPY", "value": "3"}}|{"code": "S0000", "message": "Success."}|||||all
+6-4|Payment Inquiry|Payment Inquiry退款中-查询成功||/v0/payment/mop/paymentinquiry?evonetOrderNumber=#originalEvonetOrderNumber#|tyo|trans|{"evonetOrderNumber":"#evonetOrderNumber#"}|{"status":"processing"}|MDAQ_WOP_01||bccardnacfusd||{"evonetOrderNumber": "#originalEvonetOrderNumber#"}|{"code": "S0000", "message": "Success."}|||||all
+7-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01", "userData": {"wopUserReference": "#autotest_data#", "wopToken": "#autotest_data#", "evonetUserReference": "#autotest_data#"}}|{"code": "S0000", "message": "Success."}|||||all
+7-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"mopToken": {"value": "#mopToken#"}, "mopOrderNumber": "#mopOrderNumber#", "mopTransTime": "#mopTransTime#", "transAmount": {"currency": "JPY", "value": "23"}, "storeInfo": {"id": "auto storeId", "localName": "auto localName", "mcc": "7011"}}|{"code": "S0000", "message": "Success."}|||||all
+7-3|Cancellation|Cancellation-CPM取消中|||||||MDAQ_WOP_01||bccardnacfusd||{"mopOrderNumber":"#originalMopOrderNumber#"}|{"code":"S0000","message":"Success."}|{"evonetOrderNumber":"#evonetOrderNumber#"}||||all
+7-4|Payment Inquiry|Payment Inquiry取消中-查询成功||/v0/payment/mop/paymentinquiry?evonetOrderNumber=#originalEvonetOrderNumber#|tyo|trans|{"evonetOrderNumber":"#evonetOrderNumber#"}|{"status":"cancelling"}|MDAQ_WOP_01||bccardnacfusd||{"evonetOrderNumber": "#evonetOrderNumber#"}|{"code": "S0000", "message": "Success."}|||||all
+8-1|MPM QR Verification|MPM QR Verification-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01","qrPayload":"https://bccardnacfusd.com"}|{"code": "S0000", "message": "Success."}|||||all
+8-2|MPM Payment Authentication|MPM PaymentAuthentication-交易处理中|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+9-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+9-2|CPM Payment|CPM Payment-交易失败|||||||MDAQ_WOP_01||bccardnacfusd||{"transAmount": {"currency": "USD", "value": "2.22"}}|{"code": "P0003", "message": "MOP Token invalid."}|||||all
+10-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+10-2|CPM Payment|CPM Payment-交易处理中|||||||MDAQ_WOP_01||bccardnacfusd||{"transAmount": {"currency": "USD", "value": "1.11"}}|{"code": "S0006", "message": "Success, require further processing."}|||||all
+11-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+11-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+11-3|Refund|Refund-Refund退款失败|||||||MDAQ_WOP_01||bccardnacfusd||{"originalEvonetOrderNumber": "#originalEvonetOrderNumber#", "mopOrderNumber": "#mopOrderNumber#", "mopTransTime": "#mopTransTime#", "transAmount": {"currency": "JPY", "value": "27"}}|{"code": "B0024", "message": "Invalid amount."}|||||all
+12-1|CPM Token|CPM Token-交易成功|||||||MDAQ_WOP_01||bccardnacfusd||{"brandID": "MDAQ_01"}|{"code": "S0000", "message": "Success."}|||||all
+12-2|CPM Payment|CPM Payment-交易成功|||||||MDAQ_WOP_01||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+12-3|Refund|Refund-Refund退款失败|||||||MDAQ_WOP_01||bccardnacfusd||{"originalEvonetOrderNumber": "#originalEvonetOrderNumber#", "mopOrderNumber": "#mopOrderNumber#", "mopTransTime": "#mopTransTime#", "transAmount": {"currency": "JPY", "value": "27"}}|{"code": "B0024", "message": "Invalid amount."}|||||all
+
+#mpm第三种模式
+1-1|MPM QR Verification|MPM QR Verification-交易成功|||||||MDAQ_WOP_02||bccardnacfusd||{"brandID": "MDAQ_02","qrPayload":"https://bccardnacfusd.com"}|{"code": "S0000", "message": "Success."}|||||all
+1-2|MPM Payment Authentication|MPM PaymentAuthentication-交易成功|||||||MDAQ_WOP_02||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+#银联模式
+1-1|MPM QR Verification|MPM QR Verification-交易成功|||||||MDAQ_WOP_03||bccardnacfusd||{"brandID": "MDAQ_03","qrPayload":"https://bccardnacfusd.com"}|{"code": "S0000", "message": "Success."}|||||all
+1-2|MPM Payment Authentication|MPM PaymentAuthentication-交易成功|||||||MDAQ_WOP_03||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+#不同币种
+1-1|MPM QR Verification|MPM QR Verification-交易成功|||||||MDAQ_WOP_04||bccardnacfusd||{"brandID": "MDAQ_04","qrPayload":"https://bccardnacfusd.com"}|{"code": "S0000", "message": "Success."}|||||all
+1-2|MPM Payment Authentication|MPM PaymentAuthentication-交易成功|||||||MDAQ_WOP_04||bccardnacfusd|||{"code": "S0000", "message": "Success."}|||||all
+
+
+
+submit_test_cases = [
+    ("start_task", 'SALE', 0, 'REFUND', 0),
+    ("start_task", 'SALE', 1, 'REFUND', 1),
+    ("start_task", 'SALE', 101, 'REFUND', 0),
+    ("start_task", 'SALE', 230, 'REFUND', 50),
+    ("-2h-referenceid为已失效",'SALE', 1, 'REFUND', 0),
+    ("-2h-referenceid为不存在",'SALE', 1, 'REFUND', 0),
+    ("-2h-referenceid为现在使用",'SALE', 1, 'REFUND', 0),
+    ("手工更改advice表为init进行重复上送",'SALE',0,'REFUND', 0)
+]

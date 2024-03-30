@@ -1,0 +1,3 @@
+﻿test_id|interface|title|conf|pre-update table|pre-query mongo|pre-update mongo|data|expected|check_mongo|check_mongo_expected
+1|PreOrder|evonet模式-sop不上送transferFee、senderTotalAmount、settleAmount、receiveAmount.value、fxRate的值|||||{"transferFee":None,"senderTotalAmount":None,"settleAmount":None,"fxRate":None,"receiveAmount":{"value":None,"currency":"CAD"}}|{"code":"S0000","message":"Success."}||
+2|PreOrder|evonet模式-sop不上送transferFee、senderTotalAmount、settleAmount、receiveAmount.value、fxRate的值|||||{"transferFee": {"value":"0.01","currency":"CNY"},"sendAmount": {"value":"100.00","currency":"CNY"},"senderTotalAmount": {"value":"100.00","currency":"CNY"},"receiveAmount":{"currency":"CNY"}}|{"code":"S0000","message":"Success."}||

@@ -1,0 +1,8 @@
+*.pyc
+*.xml
+.pytest_cache/
+.idea/
+__pycache__/
+assets/
+*.html
+*.xlsx
